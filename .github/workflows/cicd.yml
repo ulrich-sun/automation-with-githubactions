@@ -50,5 +50,5 @@ jobs:
           docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GH_TOKEN }}
           docker pull ghcr.io/${{ github.actor }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
           rm -rf docker-compose.website.yml
-          curl -o docker-compose.website.yml https://raw.githubusercontent.com/ulrich-sun/youtube/main/docker-compose.website.yml
+          curl -o docker-compose.website.yml https://raw.githubusercontent.com/ulrich-sun/automation-with-githubactions/dev/docker-compose.website.yml
           docker compose -f docker-compose.website.yml up -d
